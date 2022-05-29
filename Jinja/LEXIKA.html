@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" href="style.css">
+    <title>LEXIKA</title>
+  </head>
+  <body>
+    <header>
+      <title>Exemple d'une page</title>
+      <h1>Exemple d'une page</h1>
+    </header>
+    <ul>
+      {% for lines in data %}
+        {% if lines[3] == "" %}
+            {% if lines[2] == "" %}
+              <b>{{lines[0]}}</b>  <span>{{lines[4]}}<br><br></span>
+            {% else%}
+              <b>{{lines[0]}}</b> <small>  {{lines[2]}}:</small>  <span>{{lines[4]}}<br><br></span>
+            {% endif %}
+        {% else%}
+            {% if lines[2] == "" %}
+              <b STYLE="padding:0 0 0 40px;">{{lines[0]}}</b>  <span>{{lines[4]}}<br><br></span>
+            {% else%}
+             <b STYLE="padding:0 0 0 40px;"> {{lines[0]}}</b> <small>  {{lines[2]}}:</small>  <span>{{lines[4]}}<br><br></span>
+            {% endif %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </body>
+</html>
